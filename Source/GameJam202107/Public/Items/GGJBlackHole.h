@@ -29,8 +29,7 @@ public:
 
 public:
 
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Gravity")
-		class UStaticMeshComponent*Mesh;
+
 
 	// 球体范围内的物体会受到玩家的操作来开启引力或者斥力
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Gravity")

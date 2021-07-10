@@ -8,9 +8,6 @@ AGGJFan::AGGJFan()
 {
 	PrimaryActorTick.bCanEverTick = true;
 
-	Mesh = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("Mesh"));
-	RootComponent = Mesh;
-
 	BoxComp = CreateDefaultSubobject<UBoxComponent>(TEXT("BoxComp"));
 	BoxComp->SetBoxExtent(FVector(1000.0f,100.0f,100.0f));
 	

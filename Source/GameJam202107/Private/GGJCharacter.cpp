@@ -46,7 +46,7 @@ void AGGJCharacter::OpenGravitation(float value)
 	OpenGravitational(value);
 	if (value)
 	{
-		GEngine->AddOnScreenDebugMessage(-1, 0.75f, FColor::Black, TEXT("Open Gravitation"));
+		GEngine->AddOnScreenDebugMessage(-1, 0.75f, FColor::Blue, TEXT("Open Gravitation"));
 	}
 	
 }

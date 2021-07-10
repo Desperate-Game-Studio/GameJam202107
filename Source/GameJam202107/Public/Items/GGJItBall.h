@@ -18,5 +18,11 @@ public:
 
 	// 处理游戏胜利以及结束的结果
 	UFUNCTION(BlueprintImplementableEvent)
-	virtual void HandleGame(bool win);
+	void HandleGame(bool result);
+
+
+public:
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Gravity")
+		class UBoxComponent*BoxComp;
 };

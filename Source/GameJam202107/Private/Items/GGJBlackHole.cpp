@@ -10,16 +10,11 @@ AGGJBlackHole::AGGJBlackHole()
 {
 	PrimaryActorTick.bCanEverTick = true;
 
-	Mesh = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("Mesh"));
-	RootComponent = Mesh;
-
 	OutterSphereComp = CreateDefaultSubobject<USphereComponent>(TEXT("GravitationalSphere"));
 	OutterSphereComp->SetSphereRadius(200.0f);
 	OutterSphereComp->SetupAttachment(RootComponent);
 
 	Mesh->SetCollisionEnabled(ECollisionEnabled::NoCollision);
-
-	
 
 	InnerSphereComp = CreateDefaultSubobject<USphereComponent>(TEXT("InnerSphereComp"));
 	InnerSphereComp->SetSphereRadius(50.0f);
@@ -63,6 +58,8 @@ void AGGJBlackHole::InnerSphere(
 
 	if (ball)
 	{
+		UE_LOG(LogTemp, Warning, TEXT("Game Over!!!"));
+		UE_LOG(LogTemp, Warning, TEXT("The ball destory by Black Hole"));
 		ball->HandleGame(false);
 	}
 }
