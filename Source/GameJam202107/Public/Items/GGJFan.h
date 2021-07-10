@@ -18,6 +18,7 @@ public:
 
 	virtual void Tick(float DeltaTime);
 
+
 public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Gravity")
 		float GravitationPower = 2000;
