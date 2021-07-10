@@ -3,3 +3,9 @@
 
 #include "Items/GGJItBall.h"
 
+AGGJItBall::AGGJItBall()
+{
+
+}
+
+

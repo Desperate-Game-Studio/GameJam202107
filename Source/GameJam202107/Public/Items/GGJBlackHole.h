@@ -22,6 +22,11 @@ public:
 	UFUNCTION(BlueprintCallable)
 		void OpenGravitational(float IsRepulsion);
 
+	UFUNCTION(BlueprintCallable)
+		void InnerSphere(UPrimitiveComponent* OverlappedComponent,
+			AActor* OtherActor, UPrimitiveComponent* OtherComp,
+			int32 OtherBodyIndex, bool bFromSweep, const FHitResult & SweepResult);
+
 public:
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Gravity")
@@ -29,7 +34,10 @@ public:
 
 	// 球体范围内的物体会受到玩家的操作来开启引力或者斥力
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Gravity")
-		class USphereComponent*GravitationalSphere;
+		class USphereComponent*OutterSphereComp;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Gravity")
+		class USphereComponent*InnerSphereComp;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Gravity")
 		float GravitationPower = 2000;

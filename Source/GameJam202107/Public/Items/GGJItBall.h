@@ -13,5 +13,10 @@ UCLASS()
 class GAMEJAM202107_API AGGJItBall : public AGGJItemBase
 {
 	GENERATED_BODY()
-	
+public:
+	AGGJItBall();
+
+	// 处理游戏胜利以及结束的结果
+	UFUNCTION(BlueprintImplementableEvent)
+	virtual void HandleGame(bool win);
 };
