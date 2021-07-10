@@ -37,7 +37,7 @@ public:
 		class UBoxComponent*BoxComp;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Gravity")
 	class UParticleSystem*Rail;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Gravity")
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Transform ")
 		FTransform transform;
 
 	FTimerHandle  Hand;

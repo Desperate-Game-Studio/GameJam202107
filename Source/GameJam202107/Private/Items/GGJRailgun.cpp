@@ -52,7 +52,7 @@ void AGGJRailgun::SetCollision()
 		UE_LOG(LogTemp, Warning, TEXT("The Railgun BoxComp Query And Physics"));
 
 		//SpawnEmitterAttached(TestParticle, MyCharacter->GetMesh(), "MyParticle");
-		UGameplayStatics::SpawnEmitterAtLocation(GetWorld(),Rail, transform);
+		UGameplayStatics::SpawnEmitterAtLocation(GetWorld(),Rail, GetActorLocation());
 	}
 	else
 	{
