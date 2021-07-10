@@ -4,6 +4,9 @@
 #include "Items/GGJRailgun.h"
 #include <Components/BoxComponent.h>
 #include <Items/GGJItBall.h>
+#include "Kismet/GameplayStatics.h"
+#include "Particles/ParticleSystem.h"
+#include "Particles/ParticleSystemComponent.h"
 
 AGGJRailgun::AGGJRailgun()
 {
@@ -47,11 +50,13 @@ void AGGJRailgun::SetCollision()
 	{
 		BoxComp->SetCollisionEnabled(ECollisionEnabled::QueryAndPhysics);
 		UE_LOG(LogTemp, Warning, TEXT("The Railgun BoxComp Query And Physics"));
+
+		//SpawnEmitterAttached(TestParticle, MyCharacter->GetMesh(), "MyParticle");
+		UGameplayStatics::SpawnEmitterAtLocation(GetWorld(),Rail, transform);
 	}
 	else
 	{
 		BoxComp->SetCollisionEnabled(ECollisionEnabled::NoCollision);
 		UE_LOG(LogTemp, Warning, TEXT("The Railgun BoxComp No Collision"));
 	}
-
 }

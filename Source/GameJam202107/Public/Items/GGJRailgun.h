@@ -30,10 +30,15 @@ public:
 
 	UFUNCTION()
 		void SetCollision();// 使用定时器来设置box的碰撞，以此来开启激光炮
+
 public:
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Gravity")
 		class UBoxComponent*BoxComp;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Gravity")
+	class UParticleSystem*Rail;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Gravity")
+		FTransform transform;
 
 	FTimerHandle  Hand;
 };
