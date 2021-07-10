@@ -28,7 +28,6 @@ public:
 
 	// 开启引力或者开启斥力
 	void OpenGravitation(float value);
-	void OpenRepulsion(float value);
 
 	// 一个球体作为角色碰撞的范围。
 	// 球体范围内的物体会受到玩家的操作来开启引力或者斥力
@@ -41,6 +40,5 @@ public:
 	// 引力斥力函数
 	UFUNCTION(BlueprintCallable)
 	void OpenGravitational(float IsRepulsion);
-
 
 };
