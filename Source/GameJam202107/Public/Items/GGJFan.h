@@ -13,5 +13,13 @@ UCLASS()
 class GAMEJAM202107_API AGGJFan : public AGGJItemBase
 {
 	GENERATED_BODY()
+public:
+	AGGJFan();
+
+	virtual void Tick(float DeltaTime);
+public:
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Gravity")
+		class UStaticMeshComponent*Mesh;
 	
 };
