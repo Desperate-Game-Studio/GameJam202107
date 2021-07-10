@@ -38,6 +38,7 @@ void AGGJBlackHole::OpenGravitational(float IsRepulsion)
 		{
 			const float GravitationRadius = GravitationalSphere->GetScaledSphereRadius();// 引力半径获取
 			const float	Power = GravitationPower * IsRepulsion;// 引力大小
+
 			PrimComp->AddRadialForce(GetActorLocation(), GravitationRadius, Power, ERadialImpulseFalloff::RIF_Constant, true);
 		}
 	}

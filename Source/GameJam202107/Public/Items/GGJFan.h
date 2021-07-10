@@ -17,9 +17,15 @@ public:
 	AGGJFan();
 
 	virtual void Tick(float DeltaTime);
-public:
 
+
+	
+public:
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Gravity")
+		float GravitationPower = 2000;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Gravity")
 		class UStaticMeshComponent*Mesh;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Gravity")
+		class UBoxComponent*BoxComp;
 	
 };
