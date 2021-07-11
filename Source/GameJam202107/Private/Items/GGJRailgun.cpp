@@ -21,6 +21,8 @@ AGGJRailgun::AGGJRailgun()
 
 void AGGJRailgun::BeginPlay()
 {
+	Super::BeginPlay();
+
 	GetWorldTimerManager().SetTimer(Hand, this, &AGGJRailgun::SetCollision, 3.0f, true, -1.0f);
 }
 
@@ -46,7 +48,6 @@ void AGGJRailgun::BoxCompOverlapping(UPrimitiveComponent* OverlappedComponent,
 void AGGJRailgun::SetCollision()
 {
 
-	//Rail->Stop();
 	if (BoxComp->GetCollisionEnabled()== ECollisionEnabled::NoCollision)
 	{
 		BoxComp->SetCollisionEnabled(ECollisionEnabled::QueryAndPhysics);
@@ -56,6 +57,7 @@ void AGGJRailgun::SetCollision()
 		ro.ZeroRotator;
 		ro.Yaw -= 90;
 		UGameplayStatics::SpawnEmitterAtLocation(GetWorld(),Rail, GetActorLocation(), ro);
+		UGameplayStatics::SpawnSound2D(GetWorld(), sound);
 	}
 	else
 	{

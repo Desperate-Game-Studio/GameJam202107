@@ -23,6 +23,7 @@ void AGGJWinTriger::BoxCompOverlapping(UPrimitiveComponent * OverlappedComponent
 	{
 		UE_LOG(LogTemp, Warning, TEXT("Congratulations on the victory!!!"));
 
+
 		ball->HandleGame(true);
 	}
 }

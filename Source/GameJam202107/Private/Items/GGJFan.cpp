@@ -3,6 +3,7 @@
 
 #include "Items/GGJFan.h"
 #include <Components/BoxComponent.h>
+#include "Kismet/GameplayStatics.h"
 
 AGGJFan::AGGJFan()
 {
@@ -13,6 +14,13 @@ AGGJFan::AGGJFan()
 	
 	
 	BoxComp->SetupAttachment(RootComponent);
+}
+
+void AGGJFan::BeginPlay()
+{
+	Super::BeginPlay();
+
+	UGameplayStatics::SpawnSound2D(GetWorld(), sound);
 }
 
 void AGGJFan::Tick(float DeltaTime)

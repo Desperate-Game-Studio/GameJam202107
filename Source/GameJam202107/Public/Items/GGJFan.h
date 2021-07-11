@@ -20,8 +20,7 @@ public:
 
 	virtual void BeginPlay();
 
-	UFUNCTION()
-		void SpawnParticle();
+
 public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Gravity")
 		float GravitationPower = 2000;
@@ -29,4 +28,6 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Gravity")
 		class UBoxComponent*BoxComp;
 	
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Sound")
+		class USoundBase*sound;
 };

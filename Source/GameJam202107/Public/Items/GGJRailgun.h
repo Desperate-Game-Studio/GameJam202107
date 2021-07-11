@@ -37,8 +37,11 @@ public:
 		class UBoxComponent*BoxComp;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Gravity")
 	class UParticleSystem*Rail;
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Transform ")
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Transform")
 		FTransform transform;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Sound")
+	class USoundBase*sound;
 
 	FTimerHandle  Hand;
 };

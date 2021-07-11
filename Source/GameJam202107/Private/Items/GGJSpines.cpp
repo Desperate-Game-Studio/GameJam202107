@@ -5,6 +5,7 @@
 #include <Components/BoxComponent.h>
 #include <Components/StaticMeshComponent.h>
 #include "Items/GGJItBall.h"
+#include "Kismet/GameplayStatics.h"
 
 AGGJSpines::AGGJSpines()
 {
@@ -17,8 +18,6 @@ AGGJSpines::AGGJSpines()
 	BoxComp->SetupAttachment(RootComponent);
 
 	BoxComp->OnComponentBeginOverlap.AddDynamic(this, &AGGJSpines::BoxCompOverlapping);
-
-
 }
 
 void AGGJSpines::BoxCompOverlapping(UPrimitiveComponent* OverlappedComponent, 
@@ -26,7 +25,6 @@ void AGGJSpines::BoxCompOverlapping(UPrimitiveComponent* OverlappedComponent,
 	int32 OtherBodyIndex, bool bFromSweep, const FHitResult & SweepResult)
 {
 	AGGJItBall*ball = Cast<AGGJItBall>(OtherActor);
-
 	if (ball)
 	{
 		UE_LOG(LogTemp, Warning, TEXT("Game Over!!!"));
