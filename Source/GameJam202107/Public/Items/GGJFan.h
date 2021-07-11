@@ -18,7 +18,10 @@ public:
 
 	virtual void Tick(float DeltaTime);
 
+	virtual void BeginPlay();
 
+	UFUNCTION()
+		void SpawnParticle();
 public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Gravity")
 		float GravitationPower = 2000;

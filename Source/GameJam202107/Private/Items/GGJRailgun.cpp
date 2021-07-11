@@ -46,13 +46,16 @@ void AGGJRailgun::BoxCompOverlapping(UPrimitiveComponent* OverlappedComponent,
 void AGGJRailgun::SetCollision()
 {
 
+	//Rail->Stop();
 	if (BoxComp->GetCollisionEnabled()== ECollisionEnabled::NoCollision)
 	{
 		BoxComp->SetCollisionEnabled(ECollisionEnabled::QueryAndPhysics);
 		UE_LOG(LogTemp, Warning, TEXT("The Railgun BoxComp Query And Physics"));
 
-		//SpawnEmitterAttached(TestParticle, MyCharacter->GetMesh(), "MyParticle");
-		UGameplayStatics::SpawnEmitterAtLocation(GetWorld(),Rail, GetActorLocation());
+		FRotator ro;
+		ro.ZeroRotator;
+		ro.Yaw -= 90;
+		UGameplayStatics::SpawnEmitterAtLocation(GetWorld(),Rail, GetActorLocation(), ro);
 	}
 	else
 	{
