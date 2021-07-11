@@ -3,6 +3,7 @@
 
 #include "Items/GGJItBall.h"
 #include <Components/BoxComponent.h>
+#include "Kismet/GameplayStatics.h"
 
 AGGJItBall::AGGJItBall()
 {
@@ -15,6 +16,17 @@ AGGJItBall::AGGJItBall()
 	BoxComp->SetBoxExtent(FVector(100.0f, 100.0f, 100.0f));
 	BoxComp->SetupAttachment(RootComponent);
 
+	BoxComp->OnComponentBeginOverlap.AddDynamic(this, &AGGJItBall::BoxCompOverlapping);
 }
 
 
+void AGGJItBall::BoxCompOverlapping(UPrimitiveComponent* OverlappedComponent,
+	AActor* OtherActor, UPrimitiveComponent* OtherComp,
+	int32 OtherBodyIndex, bool bFromSweep, const FHitResult & SweepResult)
+{
+	if (OtherActor)
+	{
+
+		UGameplayStatics::SpawnSoundAtLocation(GetWorld(), sound,GetActorLocation());
+	}
+}
