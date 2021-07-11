@@ -5,6 +5,7 @@
 #include <Components/SphereComponent.h>
 #include "Engine/World.h"
 #include <Items/GGJItBall.h>
+#include "Kismet/GameplayStatics.h"
 
 AGGJBlackHole::AGGJBlackHole()
 {
@@ -23,6 +24,11 @@ AGGJBlackHole::AGGJBlackHole()
 
 }
 
+void AGGJBlackHole::BeginPlay()
+{
+	Super::BeginPlay();
+	UGameplayStatics::SpawnEmitterAtLocation(GetWorld(),Rail, GetActorLocation());
+}
 void AGGJBlackHole::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
@@ -41,8 +47,8 @@ void AGGJBlackHole::OpenGravitational(float IsRepulsion)
 		UPrimitiveComponent*PrimComp = OverlappingComops[i];
 		if (PrimComp&&PrimComp->IsSimulatingPhysics())
 		{
-			const float GravitationRadius = OutterSphereComp->GetScaledSphereRadius();// ÒýÁ¦°ë¾¶»ñÈ¡
-			const float	Power = GravitationPower * IsRepulsion;// ÒýÁ¦´óÐ¡
+			const float GravitationRadius = OutterSphereComp->GetScaledSphereRadius();// ï¿½ï¿½ï¿½ï¿½ï¿½ë¾¶ï¿½ï¿½È¡
+			const float	Power = GravitationPower * IsRepulsion;// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð¡
 
 			PrimComp->AddRadialForce(GetActorLocation(), GravitationRadius, Power, ERadialImpulseFalloff::RIF_Constant, true);
 		}

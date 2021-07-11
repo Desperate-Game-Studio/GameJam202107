@@ -16,6 +16,7 @@ class GAMEJAM202107_API AGGJBlackHole : public AGGJItemBase
 	GENERATED_BODY()
 public:
 	AGGJBlackHole();
+	void BeginPlay();
 	void Tick(float DeltaTime);
 
 	// 引力斥力函数
@@ -29,7 +30,8 @@ public:
 
 public:
 
-
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Gravity")
+	class UParticleSystem*Rail;
 
 	// 球体范围内的物体会受到玩家的操作来开启引力或者斥力
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Gravity")
